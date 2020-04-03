@@ -1,0 +1,32 @@
+<div class="container mystyle" *ngIf="product" >
+  <div class="panel panel-primary">
+    <div class="panel-heading">Confirmation</div>
+    <div class="panel-body">
+      <form >
+        <div class="form-group">
+          <label class="control-label">Id</label>
+          <input class="form-control" type="number" ngModel  [(ngModel)]="product.id"  name="id"disabled>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Designation</label>
+          <input class="form-control" type="text"ngModel  [(ngModel)]="product.designation"  name="designation" required="required">
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">Price</label>
+          <input class="form-control" type="number" ngModel  [(ngModel)]="product.price" name="price" required="required">
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">Quantitie</label>
+          <input class="form-control" type="number" vangModel  [(ngModel)]="product.quantitie" name="quantitie" required="required">
+        </div>
+
+        <button  class="btn btn-success" (click)="onUpdateProduct(product)" >Update</button>
+        <button  class="btn btn-danger mystyle2" routerLink="/product">Cancel</button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
