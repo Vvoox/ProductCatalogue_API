@@ -34,7 +34,7 @@
           <tbody>
           <tr *ngFor="let p of produits._embedded.produits">
             <td>{{p.id}}</td>
-            <td><a>{{p.designation}}</a></td>
+            <td><a (click)="goInfo(p)" class="clickable">{{p.designation}}</a></td>
             <td>{{p.price | number:'0.2'}}</td>
             <td>{{p.quantitie}}</td>
             <td>
@@ -55,39 +55,4 @@
       </div>
     </div>
   </div>
-</div>
-
-<!--**************************IF YOU CLICKED ON MODIFY IN HOME*****************************************************************************************-->
-
-<div class="container mystyle" *ngIf="mode==2 && currentProduct" >
-<div class="panel panel-primary">
-  <div class="panel-heading">Confirmation</div>
-  <div class="panel-body">
-    <form >
-      <div class="form-group">
-        <label class="control-label">Id</label>
-        <input class="form-control" type="number" value="{{currentProduct.id}}">
-      </div>
-      <div class="form-group">
-        <label class="control-label">Designation</label>
-        <input class="form-control" type="text" value="{{currentProduct.designation}}">
-      </div>
-
-      <div class="form-group">
-        <label class="control-label">Price</label>
-        <input class="form-control" type="number" value="{{currentProduct.price}}">
-      </div>
-
-      <div class="form-group">
-        <label class="control-label">Quantitie</label>
-        <input class="form-control" type="number" value="{{currentProduct.quantitie}}">
-      </div>
-
-      <button  class="btn btn-success" (click)="addProduct(currentProduct)" >Confirm</button>
-      <button  class="btn btn-danger mystyle2" (click)="goHome()">Cancel</button>
-
-    </form>
-
-  </div>
-</div>
 </div>

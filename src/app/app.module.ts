@@ -8,6 +8,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { ContactComponent } from './contact/contact.component';
 import { ModifyProductComponent } from './modify-product/modify-product.component';
+import { InfoProductComponent } from './info-product/info-product.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ModifyProductComponent } from './modify-product/modify-product.componen
     NewProductComponent,
     ContactComponent,
     ModifyProductComponent,
+    InfoProductComponent,
   ],
   imports: [
     BrowserModule,

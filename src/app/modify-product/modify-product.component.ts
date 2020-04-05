@@ -41,6 +41,7 @@ export class ModifyProductComponent implements OnInit {
   }
   //
   onUpdateProduct(data) {
+    data.lastUpdate=new Date();
     this.catalogueService.updateProduct(this.url,data).subscribe(data=>{
       console.log(data);
       this.status=1;

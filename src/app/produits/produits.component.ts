@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {CatalogueService} from '../services/catalogue.service';
 import {Config} from 'codelyzer';
 import {promptGlobalAnalytics} from '@angular/cli/models/analytics';
 import {Product} from '../model/product.model';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-produits',
   templateUrl: './produits.component.html',
   styleUrls: ['./produits.component.css']
+})
+@Injectable({
+  providedIn: 'root'
 })
 export class ProduitsComponent implements OnInit {
 
@@ -75,7 +78,7 @@ export class ProduitsComponent implements OnInit {
     )
 
   }
-  onDeleteProduct(p:any){
+  public onDeleteProduct(p:any){
     this.alert=0;
 
     this.catService.deleteProduct(p.id);
@@ -115,11 +118,12 @@ export class ProduitsComponent implements OnInit {
 
   }
 
-  goHome() {
-    this.mode=1;
+  goInfo(p) {
+    return this.router.navigateByUrl("/info-product/"+p.id);
   }
 
-  onModifyProd(p) {
+  public onModifyProd(p) {
     this.router.navigateByUrl("/modify-product/"+p.id);
+
   }
 }

@@ -11,7 +11,7 @@ import {Observable} from 'rxjs';
 })
 export class NewProductComponent implements OnInit {
 
-  public product:any;
+  public product:Product;
   mode:number=1;
   alert:number=0;
   constructor(private catalogueService:CatalogueService , private router:Router) { }
@@ -22,6 +22,8 @@ export class NewProductComponent implements OnInit {
 
   addProduct(value:any) {
     this.product=value
+    this.product.date=new Date();
+    this.product.lastUpdate=new Date();
     this.catalogueService.addProduct("http://localhost:8080/listProduit",value).subscribe(data=>{
       console.log(data);
       // this.router.navigateByUrl("/product");
