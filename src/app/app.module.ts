@@ -9,6 +9,7 @@ import {FormsModule} from '@angular/forms';
 import { ContactComponent } from './contact/contact.component';
 import { ModifyProductComponent } from './modify-product/modify-product.component';
 import { InfoProductComponent } from './info-product/info-product.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { InfoProductComponent } from './info-product/info-product.component';
     ContactComponent,
     ModifyProductComponent,
     InfoProductComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

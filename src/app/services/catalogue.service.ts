@@ -47,6 +47,10 @@ export class CatalogueService {
   public updateProduct(url,data){
     return this.httpClient.put(url,data);
   }
+  public login(data){
+
+    return this.httpClient.get("http://localhost:8080/login",data);
+  }
 
 
 

@@ -5,6 +5,7 @@ import {NewProductComponent} from './new-product/new-product.component';
 import {ContactComponent} from './contact/contact.component';
 import {ModifyProductComponent} from './modify-product/modify-product.component';
 import {InfoProductComponent} from './info-product/info-product.component';
+import {LoginComponent} from './login/login.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,7 @@ const routes: Routes = [
     component:NewProductComponent
   },
   {
-    path:"",redirectTo:"/product",pathMatch:"full"
+    path:"",redirectTo:"/login",pathMatch:"full"
 
   },
   {
@@ -32,7 +33,12 @@ const routes: Routes = [
   {
     path: "info-product/:id",
     component: InfoProductComponent
-  }
+  },
+  {
+    path: "login",
+    component: LoginComponent
+  },
+  { path: '**', redirectTo: '/login', pathMatch: 'full' }
 
 
 ];
