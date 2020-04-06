@@ -126,4 +126,5 @@ export class ProduitsComponent implements OnInit {
     this.router.navigateByUrl("/modify-product/"+p.id);
 
   }
+
 }

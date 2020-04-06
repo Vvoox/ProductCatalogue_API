@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Product} from '../model/product.model';
 
@@ -47,11 +47,11 @@ export class CatalogueService {
   public updateProduct(url,data){
     return this.httpClient.put(url,data);
   }
-  public login(data){
+  public onlogin(username:string,password:string){
+    const headers = new HttpHeaders({Authorization :'Basic'+btoa(username+":"+password)});
 
-    return this.httpClient.get("http://localhost:8080/login",data);
+    return this.httpClient.post(this.host+"/login",{headers});
   }
-
 
 
 

@@ -21,7 +21,7 @@ export class NewProductComponent implements OnInit {
   }
 
   addProduct(value:any) {
-    this.product=value
+    this.product=value;
     this.product.date=new Date();
     this.product.lastUpdate=new Date();
     this.catalogueService.addProduct("http://localhost:8080/listProduit",value).subscribe(data=>{

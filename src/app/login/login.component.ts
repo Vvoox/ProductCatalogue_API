@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {CatalogueService} from '../services/catalogue.service';
+import {Router} from '@angular/router';
+import {HttpHeaders} from '@angular/common/http';
+import {constants} from 'http2';
 
 @Component({
   selector: 'app-login',
@@ -8,22 +11,24 @@ import {CatalogueService} from '../services/catalogue.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private catalogueService:CatalogueService) { }
+  constructor(private catalogueService:CatalogueService , private router:Router) { }
   private username:string;
   private password:string;
 
   ngOnInit(): void {
   }
 
-  onConnect(info){
-    console.log(info.username+ " "+ info.password);
-    var data =
-      {
-        "username": this.username,
-        "password": this.password
-      };
+  doLogin(info){
 
-    this.catalogueService.login(data);
+    this.catalogueService.onlogin(info.username,info.password).subscribe(data=>{
+      console.log("gkky"+data);
+    },error => {
+      console.log(error);
+      this.router.navigateByUrl("/product");
+
+    })
   }
+
+
 
 }

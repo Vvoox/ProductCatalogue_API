@@ -1,9 +1,9 @@
 <div class="login">
-<div class="space col-md-6 col-xs-12 col-md-offset-8" >
+<div class="space col-md-6 col-xs-12 col-md-offset-8 " >
   <div class="panel panel-primary ">
     <div class="panel-heading">Login Page</div>
     <div class="panel-body">
-      <form #f="ngForm" (ngSubmit)="onConnect(f.value)"  >
+      <form  #f="ngForm" (ngSubmit)="doLogin(f.value)" >
         <div class="form-group">
           <label class="control-label">Login</label>
           <input class="form-control" type="text" ngModel name="username" >
@@ -12,9 +12,37 @@
           <label class="control-label">Password</label>
           <input class="form-control" type="password" ngModel name="password" >
         </div>
-        <button type="submit" class="btn btn-primary">Connect</button>
+        <button type="submit" class="btn btn-primary" >Connect</button>
       </form>
     </div>
   </div>
 </div>
 </div>
+<!--********************************************************************MY OLD TEMP************************************************-->
+
+<!------ Include the above in your HEAD tag ---------->
+
+<!--<script src="https://use.typekit.net/ayg4pcz.js"></script>-->
+<!--<script>try{Typekit.load({ async: true });}catch(e){}</script>-->
+
+<!--<div class="container">-->
+<!--  <h1 class="welcome text-center"><br> </h1>-->
+<!--  <div class="card card-container">-->
+<!--    <h2 class='login_title text-center'>Login</h2>-->
+<!--    <hr>-->
+
+<!--    <form class="form-signin">-->
+<!--      <span id="reauth-email" class="reauth-email"></span>-->
+<!--      <p class="input_title">Email</p>-->
+<!--      <input type="text" id="inputEmail" class="login_box" placeholder="user01@IceCode.com" required autofocus>-->
+<!--      <p class="input_title">Password</p>-->
+<!--      <input type="password" id="inputPassword" class="login_box" placeholder="******" required>-->
+<!--      <div id="remember" class="checkbox">-->
+<!--        <label>-->
+
+<!--        </label>-->
+<!--      </div>-->
+<!--      <button class="btn btn-lg btn-primary" type="submit">Login</button>-->
+<!--    </form>&lt;!&ndash; /form &ndash;&gt;-->
+<!--  </div>&lt;!&ndash; /card-container &ndash;&gt;-->
+<!--</div>&lt;!&ndash; /container &ndash;&gt;-->
