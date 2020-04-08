@@ -19,7 +19,7 @@ const routes: Routes = [
     component:NewProductComponent
   },
   {
-    path:"",redirectTo:"/product",pathMatch:"full"
+    path:"",redirectTo:"/login",pathMatch:"full"
 
   },
   {
@@ -37,7 +37,7 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginComponent
-  }
+  },
   // { path: '**', redirectTo: '/login', pathMatch: 'full' }
 
 
