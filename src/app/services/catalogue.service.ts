@@ -22,14 +22,12 @@ export class CatalogueService {
   public getProduct(page:number,size:number){
     let headers = new HttpHeaders();
     headers = headers.append("Authorization", "Bearer " +TokenModel.token);
-    headers = headers.append("Content-Type", "application/x-www-form-urlencoded");
     return this.httpClient.get(this.host+"/produits?page="+page+"&size="+size,{headers});
 
   }
   public getOneProduct(id:number):Observable<Product>{
     let headers = new HttpHeaders();
     headers = headers.append("Authorization", "Bearer " +TokenModel.token);
-    headers = headers.append("Content-Type", "application/x-www-form-urlencoded");
     // @ts-ignore
     return this.httpClient.get(this.host+"/produits/"+id,{headers});
 
@@ -38,42 +36,36 @@ export class CatalogueService {
   public getProductbyPages(page:number ,size:number){
     let headers = new HttpHeaders();
     headers = headers.append("Authorization", "Bearer " +TokenModel.token);
-    headers = headers.append("Content-Type", "application/x-www-form-urlencoded");
     return this.httpClient.get(this.host+"/pageProduct?",{headers});
 
   }
   public getProductByKeyWord(key:string,page:number,size:number){
     let headers = new HttpHeaders();
     headers = headers.append("Authorization", "Bearer " +TokenModel.token);
-    headers = headers.append("Content-Type", "application/x-www-form-urlencoded");
     return this.httpClient.get(this.host+"/produits/search/byDesignationPage?key="+key+"&page="+page+"&size="+size,{headers});
   }
 
   public deleteProduct(url){
     let headers = new HttpHeaders();
     headers = headers.append("Authorization", "Bearer " +TokenModel.token);
-    headers = headers.append("Content-Type", "application/x-www-form-urlencoded");
     return this.httpClient.delete(url,{headers});
   }
 
   public changeProduct(Designation:string,price:number,quantitie:number){
     let headers = new HttpHeaders();
     headers = headers.append("Authorization", "Bearer " +TokenModel.token);
-    headers = headers.append("Content-Type", "application/x-www-form-urlencoded");
     return this.httpClient.get(this.host+"?Designation"+Designation+"&price="+price+"&quantitie="+quantitie,{headers});
   }
 
   public addProduct(url,data):Observable<Product>{
     let headers = new HttpHeaders();
     headers = headers.append("Authorization", "Bearer " +TokenModel.token);
-    headers = headers.append("Content-Type", "application/x-www-form-urlencoded");
     // @ts-ignore
     return this.httpClient.post(url,data,{headers});
   }
   public updateProduct(url,data){
     let headers = new HttpHeaders();
     headers = headers.append("Authorization", "Bearer " +TokenModel.token);
-    headers = headers.append("Content-Type", "application/x-www-form-urlencoded");
     return this.httpClient.put(url,data,{headers});
   }
   public onlogin(username:string,password:string){

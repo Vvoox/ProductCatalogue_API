@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
        TokenModel.token=token;
 
        console.log(TokenModel.token);
+      console.log("User is logged in");
        this.router.navigateByUrl("/product");
 
 
