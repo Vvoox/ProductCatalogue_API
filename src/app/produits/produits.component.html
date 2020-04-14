@@ -1,3 +1,5 @@
+
+
 <div class="container mystyle" *ngIf="mode==1">
   <div class="panel panel-primary">
     <div class="panel-heading">All Produts</div>
@@ -11,7 +13,7 @@
       <button class="btn btn-primary mystyle1" (click)="onGetProducts()" >All Products</button>
       <button class="btn btn-primary mystyle2" routerLink="/new-product" >Add Product</button>
 
-      <form  #f="ngForm" (ngSubmit)="onSearch(f.value)" class="navbar-form navbar-left" >
+        <form  #f="ngForm" (ngSubmit)="onSearch(f.value)" class="navbar-form navbar-left" >
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Search" name="product" ngModel>
           <div class="input-group-btn">
